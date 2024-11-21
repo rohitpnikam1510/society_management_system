@@ -1,0 +1,91 @@
+import {
+  HomeIcon,
+  DocumentChartBarIcon,
+  UserCircleIcon,
+  TableCellsIcon,
+  BellIcon,
+  ArrowRightOnRectangleIcon,
+  UserPlusIcon,
+} from "@heroicons/react/24/solid";
+  import { Home } from "./pages/dashbaord";
+import { SignIn, SignUp } from "./pages/auth";
+
+const icon = {
+  className: "w-5 h-5 text-inherit",
+};
+
+export const routes = [
+  {
+    title: "admin dashboard",
+    layout: "admin-dashboard",
+    pages: [
+      {
+        icon: <DocumentChartBarIcon {...icon} />,
+        name: "dashboard",
+        path: "/home",
+        element: <Home />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "Societies",
+        path: "/societies",
+        element: <Home />,
+      },
+      // {
+      //   icon: <UserCircleIcon {...icon} />,
+      //   name: "profile",
+      //   path: "/profile",
+      //   element: <Profile />,
+      // },
+      // {
+      //   icon: <TableCellsIcon {...icon} />,
+      //   name: "tables",
+      //   path: "/tables",
+      //   element: <Tables />,
+      // },
+      // {
+      //   icon: <BellIcon {...icon} />,
+      //   name: "notifactions",
+      //   path: "/notifactions",
+      //   element: <Notifications />,
+      // },
+    ]
+  },
+  {
+    title: "society manager dashboard",
+    layout: "society-manager-dashboard",
+    pages: [
+      {
+        icon: <DocumentChartBarIcon {...icon} />,
+        name: "dashboard",
+        path: "/home",
+        element: <Home />,
+      },
+    ]
+  },
+  {
+    title: "society member dashboard",
+    layout: "society-member-dashboard",
+    pages: []
+  },
+  {
+    title: "auth pages",
+    layout: "auth",
+    pages: [
+      {
+        icon: <ArrowRightOnRectangleIcon {...icon} />,
+        name: "sign in",
+        path: "/sign-in",
+        element: <SignIn />,
+      },
+      {
+        icon: <UserPlusIcon {...icon} />,
+        name: "sign up",
+        path: "/sign-up",
+        element: <SignUp />,
+      }
+    ]
+  }
+];
+
+export default routes;
