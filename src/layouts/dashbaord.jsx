@@ -38,8 +38,8 @@ export function Dashboard() {
         </IconButton>
         <Routes>
           {routes.map(
-            ({ layout, pages }) =>
-              layout === `${userRole}-dashboard` &&
+            ({ role, layout, pages }) =>
+              role === userRole &&
               pages.map(({ path, element }) => (
                 <Route exact path={path} element={element} />
               ))

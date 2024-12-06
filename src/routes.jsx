@@ -1,13 +1,17 @@
 import {
   HomeIcon,
   DocumentChartBarIcon,
-  UserCircleIcon,
-  TableCellsIcon,
-  BellIcon,
+  UserGroupIcon,
+  BuildingStorefrontIcon,
+  MegaphoneIcon,
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
+  CurrencyRupeeIcon,
+  WrenchScrewdriverIcon,
+  AcademicCapIcon,
+  RectangleGroupIcon
 } from "@heroicons/react/24/solid";
-  import { Home } from "./pages/dashbaord";
+import { Home, Societies } from "./pages/dashboard"
 import { SignIn, SignUp } from "./pages/auth";
 
 const icon = {
@@ -16,56 +20,95 @@ const icon = {
 
 export const routes = [
   {
-    title: "admin dashboard",
-    layout: "admin-dashboard",
+    title: "management",
+    role: "admin",
+    layout: "dashboard",
     pages: [
       {
-        icon: <DocumentChartBarIcon {...icon} />,
+        icon: <RectangleGroupIcon {...icon} />,
         name: "dashboard",
         path: "/home",
         element: <Home />,
       },
       {
         icon: <HomeIcon {...icon} />,
-        name: "Societies",
+        name: "societies",
         path: "/societies",
+        element: <Societies />,
+      },
+      {
+        icon: <AcademicCapIcon {...icon} />,
+        name: "society managers",
+        path: "/society-managers",
         element: <Home />,
       },
-      // {
-      //   icon: <UserCircleIcon {...icon} />,
-      //   name: "profile",
-      //   path: "/profile",
-      //   element: <Profile />,
-      // },
-      // {
-      //   icon: <TableCellsIcon {...icon} />,
-      //   name: "tables",
-      //   path: "/tables",
-      //   element: <Tables />,
-      // },
-      // {
-      //   icon: <BellIcon {...icon} />,
-      //   name: "notifactions",
-      //   path: "/notifactions",
-      //   element: <Notifications />,
-      // },
+      {
+        icon: <UserGroupIcon {...icon} />,
+        name: "Members",
+        path: "/members",
+        element: <Home />,
+      },
+      {
+        icon: <CurrencyRupeeIcon {...icon} />,
+        name: "maintainance",
+        path: "/maintainance",
+        element: <Home />,
+      },
+      {
+        icon: <CurrencyRupeeIcon {...icon} />,
+        name: "Manage Roles",
+        path: "/manage-roles",
+        element: <Home />,
+      },
     ]
   },
   {
-    title: "society manager dashboard",
-    layout: "society-manager-dashboard",
+    title: "management",
+    role: "society-manager",
+    layout: "dashboard",
     pages: [
       {
-        icon: <DocumentChartBarIcon {...icon} />,
+        icon: <RectangleGroupIcon {...icon} />,
         name: "dashboard",
         path: "/home",
+        element: <Home />,
+      },
+      {
+        icon: <BuildingStorefrontIcon {...icon} />,
+        name: "society detail",
+        path: "/society-detail",
+        element: <Home />,
+      },
+      {
+        icon: <UserGroupIcon {...icon} />,
+        name: "members",
+        path: "/members",
+        element: <Home />,
+      },
+      {
+        icon: <CurrencyRupeeIcon {...icon} />,
+        name: "maintainance",
+        path: "/maintainance",
+        element: <Home />,
+      },
+      {
+        icon: <WrenchScrewdriverIcon {...icon} />,
+        name: "expense",
+        path: "/expense",
+        element: <Home />,
+      },
+      {
+        icon: <MegaphoneIcon {...icon} />,
+        name: "event & announcements",
+        path: "/announcement",
         element: <Home />,
       },
     ]
   },
   {
     title: "society member dashboard",
-    layout: "society-member-dashboard",
+    role: "society-member",
+    layout: "dashboard",
     pages: []
   },
   {

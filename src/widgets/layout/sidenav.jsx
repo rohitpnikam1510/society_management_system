@@ -22,15 +22,12 @@ export function Sidenav({ brandImg, brandName, routes }) {
     };
 
     const renderSideNav = () => {
-        const pagesAsPerRole = routes.filter((route, index) => route.layout === 'admin-dashboard');
-        const { title, layout, pages } = pagesAsPerRole[0];
-        // console.log('pagesAsPerRole: ', pagesAsPerRole);
-        console.log('Title: ', title);
-        console.log('Layout: ', layout);
-        console.log('Pages: ', pages);
-        const sideNavbar = routes.map(({ layout, title, pages }, key) => {
-            if(layout.includes('-dashboard')) {
-                if(layout === `${userRole}-dashboard`) {
+        const sideNavbar = routes.map(({ layout, role, title, pages }, key) => {
+            // console.log('Title: ', title);
+            // console.log('Layout: ', layout);
+            // console.log('Pages: ', pages);
+            if(layout === 'dashboard') {
+                if(role === userRole) {
                     return( <SidebarNavList key={key} layout={layout} title={title} pages={pages} />)
                 }
             } else {

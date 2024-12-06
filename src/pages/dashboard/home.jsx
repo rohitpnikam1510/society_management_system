@@ -4,6 +4,7 @@ import { StatisticsCard } from "../../widgets/cards/statistics-cards";
 import statisticsCardsData from "../../data/statistics-cards-data";
 
 export function Home() {
+    console.log('Yes Home');
     return (
         <div className="mt-12">
             <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-col-2 xl:grid-cols-4">
